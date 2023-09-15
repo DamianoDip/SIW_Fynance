@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		New Ticker
+	</title>
+	<link rel="stylesheet" href="/css/admin/formUpdateTickerData.css" />
+</head>
+
+<body>
+
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${userDetails}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+	<h1>Aggiorna dati ticker</h1>
+	<form th:action="@{'/admin/updateTickerData' + '/' + ${oldTicker.id}}" method="POST" th:object="${ticker}">
+  		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+  		</div>
+		
+          <h2>Valori attuali</h2>
+		
+            <div th:if="${ oldTicker}">
+                <span th:text="${oldTicker.tickerName}"> Nome :amz </span>
+                <span th:text="'Massimo: ' + ${oldTicker.max}">   Massimo : 12</span>
+                <span th:text="'Minimo:  ' + ${oldTicker.min}"> Minimo  : 2</span>
+                <span th:text=" 'Valore Attuale:   ' + ${oldTicker.attuale}"> Valore attuale : 6</span>
+          
+            </div>
+		
+
+		<div>
+            <h2>Valori nuovi</h2>
+			<label>Massimo:</label> <span><input type="text" th:field="${ticker.max}" /></span>
+		    <span th:if="${#fields.hasErrors('max')}" th:errors="*{max}">
+		    </span>
+		</div>
+		<div>
+			<label>Minimo:</label> <span><input type="text" th:field="${ticker.min}" /></span>
+		    <span th:if="${#fields.hasErrors('min')}" th:errors="*{min}">
+		    </span>
+		</div>
+
+		<div>
+			<label>Attuale:</label> <span><input type="text" th:field="${ticker.attuale}" /></span>
+		    <span th:if="${#fields.hasErrors('attuale')}" th:errors="*{attuale}">
+		    </span>
+		</div>
+
+
+
+		
+		<div>
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

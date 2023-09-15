@@ -1,0 +1,90 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    margin-bottom: -10px;
+}
+
+/* Stili per il messaggio se non ci sono aziende */
+div.empty-message {
+    text-align: center;
+    margin: 20px auto;
+    color: #555;
+    font-size: 18px;
+}
+
+
+/* Stile per il logo */
+.logo {
+    text-align: center;
+}
+
+
+/* Stile per la lista delle aziende */
+.company-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Stile per gli elementi della lista delle aziende */
+.company-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+}
+
+.company-item a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+}
+
+/* Stile per il messaggio quando non ci sono aziende */
+.company-empty {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}

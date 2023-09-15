@@ -1,0 +1,64 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+/* Stile del contenitore */
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile del titolo */
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+
+/* Stile dei dettagli utente */
+.user-details {
+    margin-top: 20px;
+}
+
+.user-details span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo{
+    align-items: center;
+box-sizing: border-box;
+}
+
+.info-registrazione{
+    text-align: center;
+}

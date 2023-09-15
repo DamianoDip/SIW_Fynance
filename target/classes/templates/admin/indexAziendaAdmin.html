@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Finance - Aziende
+		</title>
+		<link rel="stylesheet" href="/css/index.css" />
+	</head>
+	<body>
+
+		<header>
+			<div th:if="${userDetails}">
+				<span th:text="${userDetails.username}"></span>
+				<a href="/logout">Logout</a>
+			</div>
+			<div th:unless="${userDetails}">
+				<a href="/login">Login</a>
+			</div>
+		</header>
+		
+		<div class="logo" ><img src="/logo.siw.png" width="50%"/></div>
+		<h1>Operazioni</h1>
+
+		<div class="operation-block">
+			<div class="block-content">
+			    <a href="/admin/aziendeAdmin"> Mostra aziende</a>
+		    </div>
+		</div>
+
+        <div class="operation-block">
+			<div class="block-content">
+			   <a href="/admin/formNewAzienda"> Aggiungi azienda</a>
+		    </div>
+		</div>
+
+
+
+		
+
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Elenco portafogli</title>
+	<link rel="stylesheet" href="/css/default/portafogli.css" />
+</head>
+
+<body>
+
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${userDetails}">
+			 <div th:if = "${oauthName}">
+				<span th:text = "${oauthName}"></span>
+				<a href="/logout">Logout</a>
+			 </div> 
+			 <div th:unless = "${oauthName}">
+				 <a href="/login">Login</a>
+			 </div>
+		</div>
+	</header>
+
+	
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+	<h1>Lista portafogli</h1>
+	<div th:if="${portafogli.isEmpty()}">Non ci sono portafogli nel sistema</div>
+		<ul>
+			<li class="portafoglio-item" th:each="portafoglio : ${portafogli}">
+				<a class="portafoglio-link" th:href="@{'/default/portafoglio' + '/' + ${portafoglio.id}}"
+					th:text="${portafoglio.name} + ',   ' ">Portafoglio x,  </a>
+				<a class="modifica-link" th:href="@{'/default/formUpdatePortafoglio' + '/' + ${portafoglio.id}}"
+					th:text="'Modifica Portafoglio,   ' "> Modifica portafoglio , </a>
+				<a class="elimina-link" th:href="@{'/default/deletePortafoglio' + '/' + ${portafoglio.id}}"
+					th:text="'Elimina Portafoglio ' "> Elimina portafoglio</a>
+			</li>
+		</ul>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Elenco Aziende senza ticker</title>
+	<link rel="stylesheet" href="/css/admin/aziendeToAdd.css" />
+</head>
+
+<body>
+
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${userDetails}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+	<h1>Aziende senza ticker:</h1>
+	<div th:if="${aziendeSenzaTicker.isEmpty()}">Non ci sono aziende nel sistema senza un ticker assegnato</div>
+<ul class="company-list">
+    <li th:each="azienda : ${aziendeSenzaTicker}" class="company-item">
+        <a class="company-link"
+            th:href="@{'/setAziendaToTicker' + '/' + ${ticker.id} + '/' + ${azienda.id}}"
+            th:text="${azienda.name}">Amazon</a>
+    </li>
+</ul>
+
+</body>
+
+</html>

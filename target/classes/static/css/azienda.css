@@ -1,0 +1,119 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+/* Stili per le informazioni dell'azienda */
+div.azienda-info {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+/* Stili per le immagini dell'azienda */
+div.azienda-info img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Stili per i dettagli dell'azienda */
+div.azienda-info span {
+    display: block;
+}
+
+/* Stile per il logo */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Stile per il titolo */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Stile per il contenitore azienda */
+.company {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per l'immagine azienda */
+.company-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Stile per i dettagli azienda */
+.company-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.company-details {
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Stile per il piè di pagina */
+.bottom-page {
+    height: 100px; /* Imposta l'altezza desiderata */
+}
+
+.logo{
+    text-align: center;
+}
+
+

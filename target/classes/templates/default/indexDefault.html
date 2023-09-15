@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Finance - Homepage
+		</title>
+		<link rel="stylesheet" href="/css/index.css" />
+	</head>
+	<body>
+    	<header>
+            <div th:if="${userDetails}">
+                <span th:text="${userDetails.username}"></span>
+                <a href="/logout">Logout</a>
+            </div>
+            <div th:unless="${userDetails}">
+			     <div th:if = "${oauthName}">
+					<span th:text = "${oauthName}"></span>
+					<a href="/logout">Logout</a>
+				 </div> 
+				 <div th:unless = "${oauthName}">
+					 <a href="/login">Login</a>
+				 </div>
+            </div>
+        </header>
+    
+		<div class="logo"><img src="/logo.siw.png" width="50%"/></div>
+		<h1>Operazioni</h1>
+
+		<div class ="operation-block">
+            <div class="block-content">
+			<a href="/tickers" > Mostra tickers</a>
+            </div>
+		</div>
+
+		<div class ="operation-block">
+            <div class="block-content">
+			<a href="/aziende"> Vai alle aziende</a>
+            </div>
+    	</div>
+
+
+		<div class ="operation-block">
+            <div class="block-content">
+			<a href="/indexPortafoglio"> Vai ai portafogli</a>
+            </div>
+		</div>
+
+
+		
+
+	</body>
+</html>

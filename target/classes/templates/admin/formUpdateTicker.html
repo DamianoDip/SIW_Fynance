@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>aggiorna Ticker</title>
+	<link rel="stylesheet" href="/css/admin/formUpdateTicker.css" />
+</head>
+
+<body>
+
+
+  <header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+<h1>Aggiorna dettagli ticker</h1>
+<div th:if="${ticker}" class="ticker-details">
+    <span th:text =" ' Nome:'">Nome:</span>
+    <span class="ticker-name" th:text="${ticker.tickerName} + '  '"> amz </span>
+    <span class="ticker-info" th:text="'  Max:' + ${ticker.max} "> Max: 12</span>
+    <span class="ticker-info" th:text="'Min' + ${ticker.min} "> Min: 2</span>
+    <span class="ticker-info" th:text="'Attuale' + ${ticker.attuale} ">Attuale: 6</span>
+</div>
+<div th:unless="${ticker}" class="no-data-message">Non esiste</div>
+
+<div th:if="${azienda}" class="company-info">
+    <a class="company-link" th:href="@{'/azienda' + '/' + ${azienda.id}}"
+        th:text="${azienda.name} +    '' ">Amazon</a>
+    <a class="company-link" th:href="@{'/admin/addAziendaToTicker/' + ${ticker.id} }" th:text="' Modifica azienda '"></a>
+   
+</div>
+
+<div th:unless="${azienda}" class="no-company-message">
+    <span>Non è stato aggiunta nessuna azienda per questo ticker</span>
+    <a class="update-link" th:href="@{'/admin/addAziendaToTicker' + '/' + ${ticker.id} }">Aggiungi azienda</a>
+</div>
+
+<div class="update-block">
+    <h2>Aggiorna dati</h2>
+    <a class="update-link" th:href="@{'/admin/formUpdateTickerData' + '/' + ${ticker.id} }">Aggiorna i dati del ticker</a>
+</div>
+
+<div class="update-block">
+    <h2>Elimina ticker</h2>
+    <a class="delete-link" th:href="@{'/admin/deleteTicker' + '/' + ${ticker.id} }"   th:text="'Elimina ticker'"> Elimina</a>
+</div>
+
+    
+    
+  </body>
+  </html>
