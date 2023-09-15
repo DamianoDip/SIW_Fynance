@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>aggiorna Ticker</title>
+	<link rel="stylesheet" href="/css/default/portafoglio.css" />
+</head>
+
+<body>
+
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+        <div th:unless="${userDetails}">
+             <div th:if = "${oauthName}">
+                <span th:text = "${oauthName}"></span>
+                <a href="/logout">Logout</a>
+             </div> 
+             <div th:unless = "${oauthName}">
+                 <a href="/login">Login</a>
+             </div>
+        </div>
+    </header>
+  
+
+	<div><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+    <h1>Portafoglio</h1>
+    <div th:if="${portafoglio}">
+        <span th:text="${portafoglio.name}"> amz </span>
+
+    </div>
+    <div th:unless="${portafoglio}">Non esiste</div>
+    <div th:if="${listaTicker}">
+              <table>
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Valore Attuale</th>
+                <th>Min</th>
+                <th>Max</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticker : ${listaTicker}">
+                <td><a th:href="@{'/ticker' + '/' + ${ticker.id}}"
+                       th:text="${ticker.tickerName}">appl</a></td>
+                <td th:text="${ticker.attuale}">1000</td>
+                <td th:text="${ticker.min}">1</td>
+                <td th:text="${ticker.max}">1000.0000</td>
+            </tr>
+        </tbody>
+    </table>
+          </div>
+
+    <div th:unless="${listaTicker}">
+      <span> Non è stato aggiunta nessun ticker in questo portafoglio </span>
+
+    </div>
+    
+    
+  </body>
+  </html>
+
+

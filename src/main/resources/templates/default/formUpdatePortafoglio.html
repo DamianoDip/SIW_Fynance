@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aggiorna Portafoglio</title>
+	<link rel="stylesheet" href="/css/default/formUpdatePortafoglio.css" />
+</head>
+
+<body>
+
+  <header>
+    <div th:if="${userDetails}">
+        <span th:text="${userDetails.username}"></span>
+        <a href="/logout">Logout</a>
+    </div>
+    <div th:unless="${userDetails}">
+   <div th:if = "${oauthName}">
+  <span th:text = "${oauthName}"></span>
+  <a href="/logout">Logout</a>
+ </div> 
+ <div th:unless = "${oauthName}">
+   <a href="/login">Login</a>
+ </div>
+    </div>
+</header>
+
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+    <h1>Modifica ticker del portafoglio</h1>
+
+    <h2>Ticker non presenti nel portafoglio:</h2>
+
+    <div th:if="${ !tickerNotInPortafoglio.isEmpty()}" class="operation-block">
+        <div class="block-content">
+        <span th:text="${portafoglio.name}"> amz </span>
+        <li th:each="ticker : ${tickerNotInPortafoglio}">
+            <a th:href="@{'/ticker' + '/' + ${ticker.id}}"
+              th:text="${ticker.tickerName} + ' ,' + ${ticker.max} ">appl , 1000.0000</a>
+              <a th:href="@{'/default/addTicker'  + '/' + ${portafoglio.id} + '/' + ${ticker.id}}"
+              >  Aggiungi </a>
+          </li>
+        </div>
+        
+    </div>
+    <div th:unless="${tickerNotInPortafoglio}">Non esiste</div>
+    <h2>Ticker presenti nel portafoglio:</h2>
+
+    <div th:if="${ !tickerInPortafoglio.isEmpty()}" class="operation-block">
+        <div class="block-content">
+        <span th:text="${portafoglio.name}"> amz </span>
+        <li th:each="ticker : ${tickerInPortafoglio}" class="block-content">
+            <a th:href="@{'/ticker' + '/' + ${ticker.id}}"
+              th:text="${ticker.tickerName} + ' ,' + ${ticker.max} ">appl , 1000.0000</a>
+              <a th:href="@{'/default/removeTicker'  + '/' + ${portafoglio.id} + '/' + ${ticker.id}}"
+              >  Rimuovi </a>
+          </li>
+        
+    </div>
+    </div>
+    <div th:unless="${tickerInPortafoglio}">Non esiste</div>
+    
+  </body>
+  </html>

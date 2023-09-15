@@ -1,0 +1,92 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* Stili per la lista */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Stili per ogni elemento della lista */
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Stili per i link */
+ul li a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Stili per i link quando si passa sopra */
+ul li a:hover {
+    color: #555;
+}
+
+.logo{
+    text-align: center;
+    margin-bottom: -150;
+}
+
+
+/* Stilizza gli elementi di lista con la classe "portafoglio-item" */
+.portafoglio-item {
+    margin-bottom: 10px; /* Aggiungi spazio tra gli elementi di lista */
+    text-align: center;
+}
+
+/* Stilizza i link con la classe "portafoglio-link" all'interno degli elementi di lista */
+.portafoglio-link {
+    text-decoration: none; /* Rimuovi la sottolineatura dei link */
+    color: #333; /* Cambia il colore del testo dei link */
+    display: inline-block; /* Imposta il display in linea per allineare i link orizzontalmente */
+    margin-right: 10px; /* Aggiungi spazio tra i link */
+}
+
+.modifica-link {
+    color: #007bff; 
+}
+
+.elimina-link {
+    color: #ff0000; 
+}
+

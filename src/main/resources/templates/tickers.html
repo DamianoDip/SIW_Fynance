@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elenco tickers</title>
+    <link rel="stylesheet" href="/css/tickers.css" />
+    
+</head>
+
+<body>
+
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+        <div th:unless="${userDetails}">
+             <div th:if = "${oauthName}">
+                <span th:text = "${oauthName}"></span>
+                <a href="/logout">Logout</a>
+             </div> 
+             <div th:unless = "${oauthName}">
+                 <a href="/login">Login</a>
+             </div>
+        </div>
+    </header>
+    
+    <div class="logo"><a href="/"><img src="/logo.siw.png" width="50%" /></a></div>
+    <h1>Tickers</h1>
+    <div th:if="${tickers.isEmpty()}" class="empty-message">Non ci sono ticker nel sistema</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Valore Attuale</th>
+                <th>Min</th>
+                <th>Max</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticker : ${tickers}">
+                <td><a th:href="@{'/ticker' + '/' + ${ticker.id}}"
+                       th:text="${ticker.tickerName}">appl</a></td>
+                <td th:text="${ticker.attuale}">1000</td>
+                <td th:text="${ticker.min}">1</td>
+                <td th:text="${ticker.max}">1000.0000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Info</title>
+	<link rel="stylesheet" href="/css/azienda.css" />
+</head>
+
+<body>
+
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${userDetails}">
+			 <div th:if = "${oauthName}">
+				<span th:text = "${oauthName}"></span>
+				<a href="/logout">Logout</a>
+			 </div> 
+			 <div th:unless = "${oauthName}">
+				 <a href="/login">Login</a>
+			 </div>
+		</div>
+	</header>
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+	<h1>Dettagli Azienda</h1>
+    <div class="company" th:if="${azienda}">
+        <div class="company-image"><img th:src="@{'/display/image/' + ${azienda.image.id}}"> </div>
+		<div class="company-info">
+			<span class="company-name" th:text="${azienda.name}"> amz </span>
+			<span class="company-details" th:text="'Volume azienda:' + ${azienda.volume} "> 12</span>
+			<span class="company-details" th:text="'Capitalizzazione azienda:' + ${azienda.capitalizzazione} ">2</span>
+			<span class="company-details" th:text="'Azioni emesse azienda:' + ${azienda.azioniEmesse} ">6</span>
+		</div>
+
+
+      </div>
+	  <div class="bottom-page"> </div>
+  </body>
+</html>

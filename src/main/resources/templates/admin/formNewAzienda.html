@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		New Azienda
+	</title>
+	<link rel="stylesheet" href="/css/admin/formNewAzienda.css" />
+</head>
+
+<body>
+
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${userDetails}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div class="logo"><a href="/"><img src="/logo.siw.png" width="50%"/></a></div>
+	<h1>Aggiungi Azienda
+	</h1>
+	<form th:action="@{/admin/newAzienda}" method="POST" th:object="${azienda}" enctype="multipart/form-data">
+  		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+  		</div>
+		
+		<div>
+			<label>Nome:</label> 
+			<span><input type="text" th:field="${azienda.name}" /></span>
+		    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+		    </span>
+		</div>
+
+		<div>
+			<label>Volume:</label> <span><input type="text" th:field="${azienda.volume}" /></span>
+		    <span th:if="${#fields.hasErrors('volume')}" th:errors="*{volume}">
+		    </span>
+		</div>
+		<div>
+			<label>Capitalizzazione (Miliardi):</label> <span><input type="text" th:field="${azienda.capitalizzazione}" /></span>
+		    <span th:if="${#fields.hasErrors('capitalizzazione')}" th:errors="*{capitalizzazione}">
+		    </span>
+		</div>
+		<div>
+			<label>Immagine:</label> <span><input required type="file" name="file"></span>
+
+		</div>
+		
+
+		<div>
+			<label>Azioni emesse:</label> <span><input type="text" th:field="${azienda.azioniEmesse}" /></span>
+		    <span th:if="${#fields.hasErrors('azioniEmesse')}" th:errors="*{azioniEmesse}">
+		    </span>
+		</div>
+
+
+
+		
+		<div>
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

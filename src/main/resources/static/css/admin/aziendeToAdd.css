@@ -1,0 +1,104 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* Stili per il messaggio se non ci sono aziende senza ticker */
+div.empty-message {
+    text-align: center;
+    margin: 20px auto;
+    color: #555;
+    font-size: 18px;
+}
+
+/* Stili per la lista di aziende senza ticker */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Stili per il link delle aziende senza ticker */
+ul li a {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+ul li a:hover {
+    background-color: rgb(193, 228, 233);
+}
+
+.logo{
+    text-align: center;
+}
+
+
+/* Stile per la lista delle aziende */
+.company-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Stile per ciascun elemento della lista */
+.company-item {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per il link all'azienda */
+.company-link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Stile per il link all'azienda al passaggio del mouse */
+.company-link:hover {
+    text-decoration: underline;
+}

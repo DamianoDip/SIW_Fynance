@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Fynance - Homepage
+		</title>
+		<link rel="stylesheet" href="/css/index.css" />
+	</head>
+	<body>
+
+		<header>
+			<div th:if="${userDetails}">
+				<span th:text="${userDetails.username}"></span>
+				<a href="/logout">Logout</a>
+			</div>
+			<div th:unless="${userDetails}">
+				<a href="/login">Login</a>
+			</div>
+		</header>
+		<div><img src="/logo.siw.png" width="50%"/></div>
+		<h1>Fynance</h1>
+		<div class="operation-block">
+			<a href="/tickers">
+				<div class="block-content">
+					<img src="/images/ticker.image.jpg" alt="Mostra ticker" />
+					<span th:text =" 'Vai ai ticker' "></span>
+					<p></p>
+				</div>
+			</a>
+		</div>
+
+		<div class="operation-block">
+			<a href="/aziende">
+				<div class="block-content">
+					<img src="/images/azienda.image.jpg" alt="Mostra azienda" />
+					<span th:text =" 'Vai alle aziende' "></span>
+					<p></p>
+				</div>
+			</a>
+		</div>
+
+	</body>
+</html>

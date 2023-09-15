@@ -1,0 +1,180 @@
+/* Reset degli stili predefiniti */
+body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* Stili per le informazioni del ticker */
+div.ticker-info {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+/* Stili per i dettagli del ticker */
+div.ticker-info span {
+    display: block;
+}
+
+/* Stili per il link dell'azienda */
+div.ticker-info a {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+div.ticker-info a:hover {
+    background-color: #555;
+}
+
+/* Stili per il messaggio se non c'è un'azienda */
+div.no-azienda {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Stili per il link di aggiornamento dati ticker */
+h2 a {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+h2 a:hover {
+    background-color: #555;
+}
+
+/* Stili per la sezione di aggiornamento dati ticker */
+div.update-data-section {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+/* Stili per il link di modifica azienda */
+div.update-data-section a {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+div.update-data-section a:hover {
+    background-color: #555;
+}
+.logo{
+  text-align:center;
+}
+
+/* Stile per il blocco dei dettagli del ticker */
+.ticker-details {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    text-align: center;
+}
+
+/* Stile per il nome del ticker */
+.ticker-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Stile per le informazioni di massimo, minimo e valore attuale */
+.ticker-info {
+    font-size: 16px;
+    color: #777;
+    margin-right: 5px;
+}
+
+/* Stile per il blocco delle informazioni dell'azienda */
+.company-info {
+    margin-top: 20px;
+  
+    text-align: center;
+}
+
+/* Stile per il link all'azienda */
+.company-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Stile per il messaggio di nessuna azienda associata */
+.no-company-message {
+    font-size: 16px;
+    color: #777;
+    text-align : center; 
+    margin-top: 20px;
+}
+
+/* Stile per il blocco "Aggiorna dati" */
+.update-block {
+    margin-top: 20px;
+    text-align : center;
+}
+
+/* Stile per il link di aggiornamento dei dati del ticker */
+.update-link {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.delete-link {
+    color: #b62924;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
